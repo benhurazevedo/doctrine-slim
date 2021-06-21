@@ -1,0 +1,33 @@
+{% extends "share/layout.html" %}
+{% block content %}
+<h1>Lista Telefônica</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Telefone</th>
+			<th>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% if telefones == null %}
+			<tr>
+				<td colspan="3">Não há telefones</td>
+			</tr>
+		{% else %}
+			{% for telefone in telefones %}
+				<tr>
+					<td>{{ telefone.getNome() }}</td>
+					<td>{{ telefone.getTelefone() }}</td>
+					<td>
+						<a href="visualizardetalhes/{{ telefone.getId() }}">Detalhes</a> | 
+						<a href="apagartelefone/{{ telefone.getId() }}">Apagar</a>
+					</td>
+				</tr>
+			{% endfor %}
+		{% endif %}
+	</tbody>
+</table>
+<a href="inserirnovotelefone">Novo Telefone</a>
+{% endblock %}
+	

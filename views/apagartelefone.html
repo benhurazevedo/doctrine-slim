@@ -1,0 +1,18 @@
+{% extends "share/layout.html" %}
+{% block content %}
+<h1>Deseja apagar esse telefone?</h1>
+<dl>
+	<dt>Id</dt>
+	<dd>{{ telefone.getId() }}</dd>
+	<dt>Nome</dt>
+	<dd>{{ telefone.getNome() }}</dd>
+	<dt>Telefone</dt>
+	<dd>{{ telefone.getTelefone() }}</dd>
+</dl>
+<form method="post" action="\apagartelefone">
+	<a href="\listatelefonica"><button type="button">Não</button></a>
+	<input type="hidden" name="id" value="{{ telefone.getId() }}">
+	<input type="submit" value="Sim">
+</form>
+{% endblock %}
+	

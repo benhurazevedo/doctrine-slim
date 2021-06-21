@@ -1,0 +1,14 @@
+{% extends "share/layout.html" %}
+{% block content %}
+<h1>Telefone</h1>
+<dl>
+	<dt>Id</dt>
+	<dd>{{ telefone.getId() }}</dd>
+	<dt>Nome</dt>
+	<dd>{{ telefone.getNome() }}</dd>
+	<dt>Telefone</dt>
+	<dd>{{ telefone.getTelefone() }}</dd>
+</dl>
+<a href="\listatelefonica">Voltar</a>
+{% endblock %}
+	
